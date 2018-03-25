@@ -1,0 +1,39 @@
+﻿@model IEnumerable<OOADAspNetMVCEFAzure.Models.Predmet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ETCS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ETCS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PredmetId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PredmetId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PredmetId })
+        </td>
+    </tr>
+}
+
+</table>
